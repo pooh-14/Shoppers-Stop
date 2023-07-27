@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#image{
+    width: 100%;
+}
+
+.sale{
+    width: 88%;
+    height: 150px;
+    margin-left: 90px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.banner{
+    width: 88%;
+    height: 380px;
+    margin-left: 90px;
+    margin-bottom: 20px;
+}
+
+.delivery{
+    width: 88%;
+    height: 200px;
+    margin-left: 90px;
+    margin-bottom: 20px; 
+}
+
+#four{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+

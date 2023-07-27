@@ -10,17 +10,8 @@
     /* border: 1px solid black; */
     margin: auto;
     box-shadow: 0 0 0.75rem 0 #ccc;
-    animation: 0.5s;
 }
 
-@keyframes register {
-    0% {
-      right: -400px;
-    }
-    100% {
-      right: 0%;
-    }
-  }
 
 #register>div:nth-child(1){
     height: 240px;
@@ -36,12 +27,14 @@
     margin-top: 130px;
     font-size: 32px;
     margin-left: 30px;
+    background-color: black;
 }
 
 #register>div:nth-child(1)>p{
     margin-left: 30px;
     font-size: 18px;
     margin-top: 10px;
+    background-color: black;
 }
 
 #forms>form{
@@ -81,7 +74,7 @@
 
 #register>div:nth-child(3)>div>i{
     /* border: 1px solid grey; */
-    width: 30px;
+    width: 50px;
     text-align: center;
     padding: 25px 10px;
     border-radius: 50px;

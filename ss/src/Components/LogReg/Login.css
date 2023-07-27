@@ -26,12 +26,14 @@
     margin-top: 130px;
     font-size: 32px;
     margin-left: 30px;
+    background-color: black;
 }
 
 #login>div:nth-child(1)>p{
     margin-left: 30px;
     font-size: 18px;
     margin-top: 10px;
+    background-color: black;
 }
 
 #forms2>form{
@@ -71,7 +73,7 @@
 
 #login>div:nth-child(3)>div>i{
     /* border: 1px solid grey; */
-    width: 30px;
+    width: 50px;
     text-align: center;
     padding: 25px 10px;
     border-radius: 50px;
