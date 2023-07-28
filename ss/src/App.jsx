@@ -7,6 +7,7 @@ import Login from './Components/LogReg/Login';
 import Register from './Components/LogReg/Register';
 import Multiple from './Components/Categories/Multiple';
 import Single from './Components/Categories/Single';
+import Cart from './Components/Cart/Cart';
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
         <Route exact path='/register' element={<Register/>}/>
         <Route exact path='/multiple' element={<Multiple/>}/> 
         <Route exact path='/single/:id' element={<Single/>}/>  
+        <Route exact path='/cart' element={<Cart/>}/>  
+
       </Routes>
     </div>
   );
