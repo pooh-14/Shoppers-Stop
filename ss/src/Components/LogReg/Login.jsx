@@ -12,26 +12,27 @@ const Login = () => {
     const handleSubmit = (event) => {
       event.preventDefault();
       if (userData.email && userData.password) {
-          const users = JSON.parse(localStorage.getItem("Users")); 
-
           var flag = false;
-          for (var i = 0; i < users.length; i++) {
-            if (users[i].email == userData.email && users[i].password == userData.password) {
-              flag = true;
+          const allUsers = JSON.parse(localStorage.getItem("Users"));
+          for (var i = 0; i < allUsers.length; i++) {
+              if (allUsers[i].email == userData.email && allUsers[i].password == userData.password) {
+                  localStorage.setItem("Current-user", JSON.stringify(allUsers[i]))
+                  setUserData({ email: "", password: "" })
+                  alert("Login Successfull.")
+                  router('/')
+                  flag = true;
+                  break;
+              }
           }
+          if (flag == false) {
+              alert("Please Check your email & password.")
           }
 
-          if (flag == false) {
-              return alert("Please check credentails.")
-          }
-          alert("Login successfull.");
-          setUserData({ email: "", password: "" })
-          router('/');
-          
       } else {
-          alert("Please fill all the details! ")
+          alert("Please fill the all fields.")
       }
   }
+
   return (
     <div id='login'>
         <div>

@@ -38,7 +38,7 @@ const Navbar = () => {
           </div>
           <div>
           <i class="fa-regular fa-heart fa-lg"></i>
-          <i class="fa-solid fa-bag-shopping fa-lg"></i>
+          <i onClick={()=>router('/cart')} class="fa-solid fa-bag-shopping fa-lg"></i>
           <i onClick={() => router('/register')} class="fa-regular fa-circle-user fa-lg"></i>
           </div>
         </div>
