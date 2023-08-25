@@ -8,8 +8,11 @@ import Register from './Components/LogReg/Register';
 import Multiple from './Components/Categories/Multiple';
 import Single from './Components/Categories/Single';
 import Cart from './Components/Cart/Cart';
+import { AuthContext } from './Context/AuthContext';
+import { useContext } from 'react';
 
 function App() {
+  const { state } = useContext(AuthContext);
   return (
     <div>
       {/* <Navbar/> */}

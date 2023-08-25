@@ -1,21 +1,20 @@
 
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import './Navbar.css'
 import { useNavigate } from 'react-router-dom'
+import { AuthContext } from '../../Context/AuthContext';
 
 const Navbar = () => {
 
   const [user, setUser] = useState({});
   const router = useNavigate();
+  const { state } = useContext(AuthContext);
 
   useEffect(() => {
-      const isUserPresent = JSON.parse(localStorage.getItem("Current-user"));
-      if (user){
-          setUser(user)
-      }else{
-          setUser({})
-      }
-  },[])
+    if (state) {
+      setUser(state.user);
+    }
+  }, [state]);
 
   return (
     <div className='btmbrdr'>
