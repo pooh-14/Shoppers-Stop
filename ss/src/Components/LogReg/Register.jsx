@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./Register.css";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../Context/AuthContext";
+// import { AuthContext } from "../../Context/AuthContext";
 import { toast } from "react-hot-toast";
 import axios from "axios";
 
@@ -14,7 +14,7 @@ const Register = () => {
     role: "Buyer",
   });
 
-  const { state } = useContext(AuthContext);
+  // const { state } = useContext(AuthContext);
   const router = useNavigate();
 
   const handleChange = (event) => {
@@ -23,47 +23,31 @@ const Register = () => {
   const selectRole = (event) => {
     setUserData({ ...userData, role: event.target.value });
   };
-
-  const handleSubmit = async (event) => {
+ const handleSubmit = (event) => {
     event.preventDefault();
-    if (
-      userData.name &&
-      userData.email &&
-      userData.password &&
-      userData.confirmPassword &&
-      userData.role
-    ) {
-      if (userData.password === userData.confirmPassword) {
-        const response = await axios.post("http://localhost:8003/register", {
-          userData,
-        });
-        if (response.data.success) {
-          setUserData({
-            name: "",
-            email: "",
-            password: "",
-            confirmPassword: "",
-            role: "Buyer",
-          });
-          router("/login");
-          toast.success(response.data.message);
-        } else {
-          toast.error(response.data.message);
-        }
-      } else {
-        toast.error("Password and Confirm Password not Matched.");
-      }
-    } else {
-      toast.error("All fields are mandtory.");
-    }
-  };
+    if(userData.name && userData.email && userData.password){
+        const array = JSON.parse(localStorage.getItem("Users")) || [];
+        const userDataObj = {
+             name:userData.name ,
+             email:userData.email ,
+             password:userData.password,
+             cart : []
+            };
+        array.push(userDataObj);
+        localStorage.setItem("Users", JSON.stringify(array));
+        toast.success("Registeration Successfull..")
+        router('/login')
+    }else {
+        toast.error("Please fill all the details!")
+}
+}
   // console.log(userData, "userData")
 
-  useEffect(() => {
-    if (state?.user?.name) {
-      router("/");
-    }
-  }, [state]);
+  // useEffect(() => {
+  //   if (state?.user?.name) {
+  //     router("/");
+  //   }
+  // }, [state]);
 
   return (
     <div id="register">

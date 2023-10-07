@@ -12,7 +12,7 @@ import { AuthContext } from './Context/AuthContext';
 import { useContext } from 'react';
 
 function App() {
-  const { state } = useContext(AuthContext);
+  // const { state } = useContext(AuthContext);
   return (
     <div>
       {/* <Navbar/> */}

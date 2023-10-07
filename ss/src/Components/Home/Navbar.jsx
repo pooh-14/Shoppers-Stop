@@ -2,19 +2,19 @@
 import { useContext, useEffect, useState } from 'react';
 import './Navbar.css'
 import { useNavigate } from 'react-router-dom'
-import { AuthContext } from '../../Context/AuthContext';
+// import { AuthContext } from '../../Context/AuthContext';
 
 const Navbar = () => {
 
   const [user, setUser] = useState({});
   const router = useNavigate();
-  const { state } = useContext(AuthContext);
+  // const { state } = useContext(AuthContext);
 
-  useEffect(() => {
-    if (state) {
-      setUser(state.user);
-    }
-  }, [state]);
+  // useEffect(() => {
+  //   if (state) {
+  //     setUser(state.user);
+  //   }
+  // }, [state]);
 
   return (
     <div className='btmbrdr'>
