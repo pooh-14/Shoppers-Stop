@@ -1,59 +1,60 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './Single.css'
 import { useNavigate, useParams } from 'react-router-dom';
-import Navbar from '../Home/Navbar';
+// import Navbar from '../Home/Navbar';
+import { AuthContext } from '../../Context/AuthContext';
+import api from '../ApiConfig';
+import toast from 'react-hot-toast';
 
 const Single = () => {
 
-    const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
-    const [currentUserEmail, setCurrentUserEmail] = useState("");
-    const [products, setProducts] = useState([]);
-    const [single, setSingle] = useState({});
     const { id } = useParams();
+    const { state } = useContext(AuthContext);
+    const [singleProductData, setSingleProductData] = useState({});
+    // const [productData, setProductData] = useState({name: "", price: "", image: "", category: ""});
     const router = useNavigate();
   
     useEffect(() => {
-      fetch("https://fakestoreapi.com/products")
-        .then((res) => res.json())
-        .then((json) => setProducts(json));
-    }, []);
+      if (id) {
+          async function getSingleProductData() {
+              try {
+                  const response = await api.post('/get-single-product-data', { productId: id })
+                  if (response.data.success) {
+                      setSingleProductData(response.data.product)
+                  }
+              } catch (error) {
   
-    useEffect(() => {
-      if (id && products.length) {
-        const result = products.find((product) => product.id === parseInt(id));
-        setSingle(result);
-      }
-    }, [id, products]);
-  
-    useEffect(() => {
-      const user = JSON.parse(localStorage.getItem("Current-user"));
-      console.log(user, "uzer");
-      if (user) {
-        setIsUserLoggedIn(true);
-        setCurrentUserEmail(user.email);
-      }
-    }, []);
-  
-    function addCart() {
-      if (isUserLoggedIn) {
-        const users = JSON.parse(localStorage.getItem("Users"));
-        for (let i = 0; i < users.length; i++) {
-          if (users[i].email === currentUserEmail) {
-            users[i].cart.push(single);
-            localStorage.setItem("Users", JSON.stringify(users));
-            break;
+              }
           }
-        }
-        alert("Product successfully added to cart!");
-        router("/multiple");
-      } else {
-        alert("You can't add a product before logging in!");
+          getSingleProductData()
       }
+  }, [id])
+  
+    // console.log(singleProductData, "singleProductData");
+  
+    async function addCart(productId) {
+      
+        try {
+            const response = await api.post("/add-to-cart", {
+              productId,
+              userId: state?.user?._id,
+            });
+            
+            if (response.data.success) {
+              toast.success("Product added successfully to cart!!");
+            }
+          
+        } catch (error) {
+          console.log(error);
+          toast.error("Login First")
+          router("/login")
+        }
+      
     }
 
   return (
     <div>
-        <Navbar/>
+        {/* <Navbar/> */}
      <div id="bodi">
     <div>
         {/* <p> Home / Clothing / Women Clothing / Dresses / <b>Berrylush Dresses - More By Berrylush</b></p> */}
@@ -62,38 +63,38 @@ const Single = () => {
         <div>
             <div>
                 <img
-                    src={single.image} />
+                    src={singleProductData.image} />
             </div>
             <div>
                 <img
-                    src={single.image} />
+                    src={singleProductData.image} />
             </div>
             <div>
                 <img
-                    src={single.image} />
+                    src={singleProductData.image} />
             </div>
             <div>
                 <img
-                    src={single.image}/>
+                    src={singleProductData.image}/>
             </div>
             <div>
                 <img
-                    src={single.image}/>
+                    src={singleProductData.image}/>
             </div>
             <div>
                 <img
-                    src={single.image} />
+                    src={singleProductData.image} />
             </div>
         </div>
 
 
         <div id="toright">
             <div>
-                <h2>{single.title}</h2>
-                <p>{single.description}</p>
+                <h2>{singleProductData.name}</h2>
+                {/* <p>{singleProductData.description}</p> */}
             </div>
             <div>
-                <h2>{single.price}$</h2>
+                <h2>{singleProductData.price}$</h2>
                 <p>inclusive of all taxes</p>
                 <h4> SELECT SIZE  </h4>
                 <div>

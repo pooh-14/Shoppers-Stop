@@ -1,26 +1,27 @@
 import React, { useEffect, useState } from "react";
 import "./Multiple.css";
-import Navbar from "../Home/Navbar";
+// import Navbar from "../Home/Navbar";
 import { useNavigate } from "react-router-dom";
+import api from "../ApiConfig";
 
 const Multiple = () => {
   const [products, setProducts] = useState([]);
-  const router = useNavigate();
+    const router = useNavigate()
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((json) => setProducts(json));
+    async function getProducts() {
+      const token = JSON.parse(localStorage.getItem("token"));
+      const response = await api.get("/all-products", { token });
+      if (response.data.success) {
+        setProducts(response.data.products);
+      }
+    }
+    getProducts();
   }, []);
-
-  const redirect = (id) => {
-    console.log(id, "-id");
-    router(`/single/${id}`);
-  };
 
   return (
     <div>
-       <Navbar/>
+       {/* <Navbar/> */}
     <div id="menz">
       <div id="one">
         <p>Shirts For Men</p>
@@ -206,7 +207,8 @@ const Multiple = () => {
 
         <div id="mensright">
           {products.map((pro) => (
-            <div onClick={() => redirect(pro.id)} >
+            <div onClick={() => router(`/singleproduct/${pro._id}`)}
+            key={pro._id} >
               <div>
                 <img src={pro.image} />
               </div>

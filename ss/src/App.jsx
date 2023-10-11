@@ -1,6 +1,5 @@
 import logo from './logo.svg';
 import './App.css';
-// import Navbar from './Components/Home/Navbar';
 import Home from './Components/Home/Home';
 import {Route,Routes} from 'react-router-dom';
 import Login from './Components/LogReg/Login';
@@ -10,12 +9,13 @@ import Single from './Components/Categories/Single';
 import Cart from './Components/Cart/Cart';
 import { AuthContext } from './Context/AuthContext';
 import { useContext } from 'react';
+import Navbar from './Components/Home/Navbar';
 
 function App() {
   // const { state } = useContext(AuthContext);
   return (
     <div>
-      {/* <Navbar/> */}
+      <Navbar/>
       <Routes>
         <Route exact path='/' element={<Home/>}/>  
         <Route exact path='/login' element={<Login/>}/>
