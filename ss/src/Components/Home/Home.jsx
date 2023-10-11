@@ -1,11 +1,11 @@
 import React from 'react'
 import '../Home/Home.css'
-import Navbar from './Navbar'
+// import Navbar from './Navbar'
 
 const Home = () => {
   return (
     <div id='image'>
-      <Navbar/>
+      {/* <Navbar/> */}
       <img className='sale' src="https://sslimages.shoppersstop.com/sys-master/root/h47/hda/30416999219230/Strip-Banner-Web--2023-07--17-new-hp-page-flat50.jpg"/>
       <img className='banner' src="https://sslimages.shoppersstop.com/sys-master/root/hf2/h13/30477648166942/private-brand_top-banner-web_eoss-2023.jpg"/>
       <img className='delivery' src="https://sslimages.shoppersstop.com/sys-master/root/h1b/hf7/29782554771486/Icons-2-App----000-new-home-page--2023-apri--msite--l-1111.jpg"/>

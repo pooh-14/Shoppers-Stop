@@ -207,27 +207,26 @@ const Multiple = () => {
 
         <div id="mensright">
           {products.map((pro) => (
-            <div onClick={() => router(`/singleproduct/${pro._id}`)}
-            key={pro._id} >
+            <div onClick={() => router(`/single/${pro._id}`)}  key={pro._id} >
               <div>
                 <img src={pro.image} />
               </div>
 
               <div>
-                <p>{pro.title}</p>
-                {/* <p>{pro.description}</p> */}
+                <p>{pro.name}</p>
+                <p>{pro.description}</p>
                 <span>₹{pro.price}</span>
-                <span>{/* <s>₹{pro["Before Discount"]}</s> */}</span>
+                <span><s>₹{pro.price*2}</s></span>
 
                 <div>
-                  {/* <span>
-                  <p>{pro.Ratings}</p>
+                  <span>
+                  <p>4.5</p>
                   <i class="fa-solid fa-star fa-xs"></i>
-                </span> */}
-                  {/* <span>{pro.count}</span> */}
+                </span> 
+                  <span>21</span>
                 </div>
 
-                {/* <p>{pro.stock}</p> */}
+                 <p>(3)</p>
               </div>
 
               <div id="like">

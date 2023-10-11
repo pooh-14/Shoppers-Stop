@@ -17,8 +17,12 @@ const Navbar = () => {
 
   const [isActive, setIsActive] = useState(false);
 
-  const toggleLoginForm = () => {
-    setIsActive(!isActive);
+  const openLoginForm = () => {
+    setIsActive(true);
+  };
+
+  const closeLoginForm = () => {
+    setIsActive(false);
   };
 
  
@@ -92,7 +96,7 @@ useEffect(() => {
           <div>
           <i class="fa-regular fa-heart fa-lg"></i>
           <i onClick={()=>router('/cart')} class="fa-solid fa-bag-shopping fa-lg"></i>
-          <i onClick={toggleLoginForm} class="fa-regular fa-circle-user fa-lg"></i>
+          <i onClick={openLoginForm} class="fa-regular fa-circle-user fa-lg"></i>
           </div>
         </div>
       </div>
@@ -113,11 +117,10 @@ useEffect(() => {
         <p>BRANDS</p>
       </div>
       
-
     </div>
 {/* // ------------------------------**Login**------------------------------ */}
 
-    <div id='login' className={`login-form ${isActive ? 'active' : ''}`}>
+    <div id='login' className={`login-form ${isActive ? 'active' : ''}`} onMouseLeave={closeLoginForm}>
         <div>
         <h1>Log in </h1>
         <p>for tailored experience</p>

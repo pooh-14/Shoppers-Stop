@@ -207,20 +207,27 @@ export const getSingleProductData = async (req, res) => {
 
 export const addToCart = async (req, res) => {
   try {
-      const { productId, userId } = req.body;
-      if (!productId) return res.status(404).json({ success: false, message: "Product id is mandtory.." })
-      if (!userId) return res.status(404).json({ success: false, message: "User id is mandtory.." })
+    const { productId, userId } = req.body;
 
+    if (!productId) {
+      return res.status(400).json({ success: false, message: "Product ID is mandatory." });
+    }
+    
+    if (!userId) {
+      return res.status(400).json({ success: false, message: "User ID is mandatory." });
+    }
 
-      const user = await UserModal.findByIdAndUpdate(userId, { $push: { cart: productId } })
-      if (!user) return res.status(404).json({ success: false, message: "User not found.." })
+    // Assuming you have a User model set up correctly
+    const user = await UserModal.findByIdAndUpdate(userId, { $push: { cart: productId } });
 
+    if (!user) {
+      return res.status(404).json({ success: false, message: "User not found." });
+    }
 
-      return res.status(200).json({ success: true })
-
+    return res.status(200).json({ success: true });
   } catch (error) {
-      console.log(error, "error")
-      return res.status(500).json({ success: false, error: error.message })
+    console.error("Error while adding product to cart:", error);
+    return res.status(500).json({ success: false, message: "Internal server error." });
   }
 }
 
