@@ -111,7 +111,7 @@ const Single = () => {
                   <i class="fa-regular fa-heart fa-xl"></i>
                 </div>
                 <div>
-                  <input onClick={addToCart} type="submit" value="ADD TO BAG" />
+                  <input onClick={() => addToCart(singleProductData._id)} type="submit" value="ADD TO BAG" />
                 </div>
               </div>
             </div>
