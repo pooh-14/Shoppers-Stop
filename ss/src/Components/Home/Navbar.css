@@ -135,6 +135,65 @@
     border-bottom: 2px solid black;
 }
 
+
+     /* ------------------------------**MensDrop**------------------------------  */
+
+#mensdrop{
+    position: absolute;
+    width: 100%;
+    height: 480px;
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 270px 0 100px;
+    background-color: white;
+    box-shadow: 2px 0 10px rgba(36, 36, 36, 0.2);
+
+}
+
+
+#mensdrop>div>p{
+    color: #777777;  
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+#mensdrop>div>p:hover{
+    color: #FF5D3B;
+}
+
+#mensdrop>div>p>b{
+    color: black;
+    line-height: 32px;
+}
+
+#mensdrop>div>p>b:hover{
+    color: #FF5D3B;
+}
+
+#mensdrop>div:nth-child(1)>p{
+    color: #777777;  
+    font-size:17px;
+    font-weight: 600;
+    line-height: 35px;
+    padding-left: 7px;
+}
+
+#mensdrop>div:nth-child(1)>p:hover{
+    color: black; 
+    border-left: 2px solid #FF5D3B;
+    
+}
+
+
+
+
+
+
+
+
+
 /* <style type="text/css"> */
 /* @keyframes ldio-5m4rxymmg8a {
   0% { opacity: 1 }

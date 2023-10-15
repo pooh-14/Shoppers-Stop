@@ -6,13 +6,13 @@ const Home = () => {
   return (
     <div id='image'>
       {/* <Navbar/> */}
-      <img className='sale' src="https://sslimages.shoppersstop.com/sys-master/root/h47/hda/30416999219230/Strip-Banner-Web--2023-07--17-new-hp-page-flat50.jpg"/>
-      <img className='banner' src="https://sslimages.shoppersstop.com/sys-master/root/hf2/h13/30477648166942/private-brand_top-banner-web_eoss-2023.jpg"/>
-      <img className='delivery' src="https://sslimages.shoppersstop.com/sys-master/root/h1b/hf7/29782554771486/Icons-2-App----000-new-home-page--2023-apri--msite--l-1111.jpg"/>
+      <img className='sale' src="https://sslimages.shoppersstop.com/sys-master/root/hdd/h7e/31083770085406/NARS_HP_stripeNARS_HP_Strip_WEB--nars--page--2023-09--10_NS-23.jpg"/>
+      <img className='banner' src="https://sslimages.shoppersstop.com/sys-master/root/hc6/hce/31078948995102/sanya-kashish-Web-%28500%29_AW-23.gif"/>
       <img className='sale' src="https://sslimages.shoppersstop.com/sys-master/root/he6/h9e/30236570255390/SS-First-Strip-Creative-Web_eoss-23.jpg"/>
       <img className='sale' src='https://sslimages.shoppersstop.com/sys-master/root/h06/h28/30434628763678/bargains-of-the-day-gif-web--hp--page-strip--2023-07--21.gif'/>
-      <img className='banner' src="https://sslimages.shoppersstop.com/sys-master/root/h5f/h90/30473216294942/BOD-web_240723m.jpg"/>
-      <img className='banner' src="https://sslimages.shoppersstop.com/sys-master/root/h77/hf2/30473217015838/Kazo-web_240723m.jpg"/>
+      <img className='banner' src="https://sslimages.shoppersstop.com/sys-master/root/h40/hc5/31078676234270/NARS_multiclick_PowermatteNARS_PowermatteShadeExtension_Web232.jpg"/>
+      <img className='delivery' src="https://sslimages.shoppersstop.com/sys-master/root/h1b/hf7/29782554771486/Icons-2-App----000-new-home-page--2023-apri--msite--l-1111.jpg"/>
+      <img className='banner' src="https://sslimages.shoppersstop.com/sys-master/root/h60/hd4/30964448100382/Web_1840x500---work-wear-edit--20223-09--22--whats-trending.gif"/>
       <img className='sale' src="https://sslimages.shoppersstop.com/sys-master/root/hb9/hc3/30163261423646/What%27s-Trending-In_Strip-web_474674849.jpg" />
       <img className='banner' src="https://sslimages.shoppersstop.com/sys-master/root/he9/h08/30388218265630/Barbie-web--gif-file-2023-07-14-hp-page.gif" />
       <img className='sale' src='https://sslimages.shoppersstop.com/sys-master/root/h1f/hb0/30493045981214/rush-hour-madaness-web_eoss-2023.gif'/>
