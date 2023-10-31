@@ -24,8 +24,8 @@ const Multiple = () => {
        {/* <Navbar/> */}
     <div id="menz">
       <div id="one">
-        <p>Shirts For Men</p>
-        <p>110919 Products</p>
+        <p>All in Clothing</p>
+        <p>110919+ Products</p>
       </div>
       <div id="two">
         <div>

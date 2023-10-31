@@ -148,6 +148,7 @@
     padding: 15px 270px 0 100px;
     background-color: white;
     box-shadow: 2px 0 10px rgba(36, 36, 36, 0.2);
+    z-index: 999;
 
 }
 
@@ -185,6 +186,44 @@
     border-left: 2px solid #FF5D3B;
     
 }
+
+/* ------------------------------**MensDrop**------------------------------  */
+
+/* ------------------------------**infoDrop**------------------------------ */
+#infodrop{
+    width: 290px;
+    height: 233px;
+    position: absolute;
+    /* border: 1p solid blue;   */
+    background-color: white;
+    top: 65px;
+    padding: 0 10px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.337);
+    right: 90px;
+}
+
+#infodrop>div{
+    display: flex;
+    border-bottom: 1px solid rgb(211, 211, 211);
+    height: 57px;
+    align-items: center;
+    padding: 0 10px;
+    font-size: 17px;
+    color: #373737;
+}
+#infodrop>div:nth-child(4){
+    border-bottom:none;
+}
+
+#infodrop>div>img{
+    margin-right: 10px;
+}
+
+#infodrop>div>i{
+    margin-right: 10px;
+    color: black;
+}
+/* ------------------------------**infoDrop**------------------------------ */
 
 
 
